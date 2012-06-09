@@ -21,18 +21,15 @@ public class Application extends Controller {
  
     public static void addProduct(@Valid Product product){
 
-    	System.out.println(">>>>>>>> Book's normal name" + product.name);
-	System.out.println(">>>>>>>> subCategory" + product.subCategory);
-	System.out.println(">>>>>>>> Rent" + product.rent);
-
 	if(validation.hasErrors()){
-	//render() ;
+	index();
 
         }
+	else{
 	product.create();
 	flash.success(product.name + " -- Added to Selltics");
 	add();
-	
+	}
 
    }
 
