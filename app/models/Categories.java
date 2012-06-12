@@ -1,19 +1,22 @@
 package models;
 
 
+//import siena.*;
+//import play.data.validation.*;
+//import javax.persistence.*;
+//import siena.Json.*;
+
 import siena.*;
-import play.data.validation.*;
-import javax.persistence.*;
+//import play.data.validation.*;
+
+import siena.Json.*;
 
 
-
-
-@Table("Categories")
 public class Categories extends Model {
 
 @Id(Generator.AUTO_INCREMENT)
 @Column("catID")
-public Long catID ;
+public String catID ;
 
 @Max(10) @NotNull
 @Column("parentId")

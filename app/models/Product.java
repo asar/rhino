@@ -2,12 +2,12 @@ package models;
 
 
 import siena.*;
-import play.data.validation.*;
-import javax.persistence.*;
+//import play.data.validation.*;
+
+import siena.Json.*;
 
 
 
-@Table("Product")
 public class Product extends Model {
 
 @Id(Generator.AUTO_INCREMENT)

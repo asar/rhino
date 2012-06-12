@@ -31,7 +31,7 @@ public class Application extends Controller {
 
         }
 	else{
-	product.create();
+	product.update();
 	flash.success(product.name + " -- Added to Selltics");
 	add();
 	}
