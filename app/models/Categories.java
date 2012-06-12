@@ -1,28 +1,30 @@
 package models;
 
-import play.db.jpa.*;
+
+import siena.*;
 import play.data.validation.*;
 import javax.persistence.*;
 
 
-@Entity
-@Table(name="Categories")
 
+
+@Table("Categories")
 public class Categories extends Model {
 
-@Required
-@MinSize(8)
-public String catID ;
+@Id(Generator.AUTO_INCREMENT)
+@Column("catID")
+public Long catID ;
 
-@Required
-@MinSize(8)
+@Max(10) @NotNull
+@Column("parentId")
 public String parentId ;
 
 
-@Required
-@MinSize(8)
+@Max(10) @NotNull
+@Column("catName")
 public String catName ;
 
+@Column("catDesc")
 public String catDesc ;
 
 
@@ -42,6 +44,10 @@ public String toString() {
 
     }
 
+
+public static Query<Categories> all() {
+        	return Model.all(Categories.class);
+        }
 
 
 

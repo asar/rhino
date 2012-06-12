@@ -1,34 +1,38 @@
 package models;
 
-import play.db.jpa.*;
+
+import siena.*;
 import play.data.validation.*;
 import javax.persistence.*;
 
 
-@Entity
-@Table(name="Product")
 
+@Table("Product")
 public class Product extends Model {
 
-@Required
+@Id(Generator.AUTO_INCREMENT)
+@Column("ID")
+public Long ID ;
+
+@Max(20) @NotNull
 public String category ;
 
-@Required
+@Max(20) @NotNull
 public String subCategory ;
 
-@Required
+@Max(20) @NotNull
 public String name ;
 
-@Required
+@Max(10) @NotNull
 public String dateTill ;
 
-@Required
+@Max(10) @NotNull
 public double rent ;
 
 
 public String genre ;
 
-@Required
+@Max(50) @NotNull
 public String anyKnownFaults ;
 
 
@@ -44,6 +48,11 @@ this.anyKnownFaults = anyKnownFaults ;
 
 }
 
+
+
+public static Query<Product> all() {
+        	return Model.all(Product.class);
+        }
 
 }
 

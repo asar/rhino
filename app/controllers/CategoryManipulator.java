@@ -2,7 +2,7 @@ package controllers;
  
 import models.*;
 
-@CRUD.For(Categories.class)
-public class CategoryManipulator extends CRUD {
+@For(models.Categories.class)
+public class CategoryManipulator extends controllers.CRUD {
     
 }
