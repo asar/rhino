@@ -3,7 +3,18 @@
 
 <h1>Add Product to Selltics</h1>
 
+
 #{form @addProduct()}
+
+    <p><strong>Select Category</strong> : <select>
+#{list items:categories, as:'categoryItem'}
+			<option value="${categoryItem.catID}">
+				${categoryItem.catName}
+			</option>
+		#{/list}
+</select>
+</p>
+
     #{field 'product.category'}
         <p class="${field.errorClass}">
             <strong>Category:</strong> <input type="text" name="${field.name}" size="16" value="${category?.category}"> *

@@ -1,0 +1,13 @@
+
+#Categories
+
+models.Categories(c1):
+catID: ELE
+parentId: NULL
+catName: Electronics
+catDesc: This category deals with everything that comes under electronics
+
+
+
+    
+  
